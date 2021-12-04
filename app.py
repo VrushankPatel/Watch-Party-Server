@@ -31,7 +31,8 @@ def getChunk(movieName, chunkByte1=None, chunkByte2=None):
 
 
 @app.route('/video/<movieName>')
-def getBlob(movieName):    
+def getBlob(movieName):
+    
     range = request.headers.get('Range', None)    
     chunkByte1, chunkByte2 = 0, None
     if range:
